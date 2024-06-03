@@ -5,7 +5,7 @@ services:
    - docker
 
 before_install:
-  - DOCKER_BUILDKIT=1 docker build -t anvithaprabhu8/react-test -f ./client/Dockerfile.dev .
+  - docker build -t anvithaprabhu8/react-test -f ./client/Dockerfile.dev .
 
 script:
   - docker run -e CI=true anvithaprabhu8/react-test npm test
